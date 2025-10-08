@@ -1,80 +1,75 @@
 (function () {
   const navToggle = document.querySelector('.nav-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const lectureCards = document.querySelectorAll('.lecture-card');
-  const modals = document.querySelectorAll('.modal');
+  const subjectButtons = document.querySelectorAll('.tab-btn');
+  const tutorCards = document.querySelectorAll('[data-subject-card]');
+  const budgetRange = document.getElementById('budget');
+  const budgetValue = document.getElementById('budget-value');
+  const forms = document.querySelectorAll('form');
   const toastTemplate = document.getElementById('toast-template');
   const yearEl = document.getElementById('year');
-  const contactForm = document.querySelector('.contact-form');
-  const newsletterForm = document.querySelector('.newsletter');
 
-  yearEl.textContent = new Date().getFullYear();
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 
   const toggleMobileMenu = () => {
+    if (!navToggle || !mobileMenu) return;
     const expanded = navToggle.getAttribute('aria-expanded') === 'true';
     navToggle.setAttribute('aria-expanded', String(!expanded));
     mobileMenu.toggleAttribute('hidden');
   };
 
-  navToggle.addEventListener('click', toggleMobileMenu);
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener('click', toggleMobileMenu);
 
-  mobileMenu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 860) {
-        toggleMobileMenu();
-      }
-    });
-  });
-
-  const filterLectures = (category) => {
-    lectureCards.forEach((card) => {
-      const matches = category === 'all' || card.dataset.category === category;
-      card.hidden = !matches;
-    });
-  };
-
-  filterButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach((item) => item.classList.remove('active'));
-      btn.classList.add('active');
-      filterLectures(btn.dataset.filter);
-    });
-  });
-
-  const openModal = (id) => {
-    const modal = document.getElementById(id);
-    if (!modal) return;
-    modal.hidden = false;
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeModal = (modal) => {
-    modal.hidden = true;
-    document.body.style.overflow = '';
-  };
-
-  document.addEventListener('click', (event) => {
-    const trigger = event.target.closest('[data-modal-target]');
-    if (trigger) {
-      openModal(trigger.dataset.modalTarget);
-    }
-
-    if (event.target.matches('[data-close]')) {
-      const modal = event.target.closest('.modal');
-      if (modal) closeModal(modal);
-    }
-  });
-
-  window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      modals.forEach((modal) => {
-        if (!modal.hidden) closeModal(modal);
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 820) {
+          toggleMobileMenu();
+        }
       });
+    });
+  }
+
+  const showSubject = (subject) => {
+    tutorCards.forEach((card) => {
+      const matches = subject === card.dataset.subjectCard;
+      card.toggleAttribute('hidden', !matches);
+    });
+  };
+
+  if (subjectButtons.length) {
+    const activeButton = Array.from(subjectButtons).find((button) => button.classList.contains('active'));
+    if (activeButton) {
+      showSubject(activeButton.dataset.subject);
     }
-  });
+
+    subjectButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        subjectButtons.forEach((item) => {
+          item.classList.remove('active');
+          item.setAttribute('aria-selected', 'false');
+        });
+
+        button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+        showSubject(button.dataset.subject);
+      });
+    });
+  }
+
+  if (budgetRange && budgetValue) {
+    const updateBudget = () => {
+      budgetValue.textContent = `$${budgetRange.value}`;
+    };
+
+    budgetRange.addEventListener('input', updateBudget);
+    updateBudget();
+  }
 
   const showToast = (message) => {
+    if (!toastTemplate) return;
     const toast = toastTemplate.content.firstElementChild.cloneNode(true);
     toast.textContent = message;
     document.body.appendChild(toast);
@@ -85,39 +80,30 @@
     }, 2600);
   };
 
-  document.querySelectorAll('[data-unlock]').forEach((button) => {
-    button.addEventListener('click', () => {
-      const key = button.dataset.unlock;
-      const downloadLink = document.querySelector(`[data-download="${key}"]`);
-      if (!downloadLink) return;
-      downloadLink.hidden = false;
-      showToast('Download unlocked! Enjoy your lecture.');
-    });
-  });
-
-  const setupForm = (form) => {
-    if (!form) return;
+  forms.forEach((form) => {
     const feedback = form.querySelector('.form-feedback');
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       const formData = new FormData(form);
-      const hasEmptyRequired = Array.from(form.querySelectorAll('[required]')).some((field) => {
-        return !String(formData.get(field.name)).trim();
-      });
+      const requiredFields = Array.from(form.querySelectorAll('[required]'));
+      const hasEmptyRequired = requiredFields.some((field) => !String(formData.get(field.name)).trim());
 
       if (hasEmptyRequired) {
-        feedback.textContent = 'Please fill in all required fields.';
-        feedback.style.color = '#ef4444';
+        if (feedback) {
+          feedback.textContent = 'Please fill in the required fields.';
+          feedback.style.color = '#ff6b6b';
+        }
+        showToast('Please complete the highlighted fields.');
         return;
       }
 
-      feedback.textContent = 'Thanks! We will get back to you soon.';
-      feedback.style.color = 'var(--color-primary)';
+      if (feedback) {
+        feedback.textContent = 'Thanks! We will be in touch soon.';
+        feedback.style.color = 'var(--color-primary)';
+      }
       form.reset();
+      showToast('Form submitted successfully.');
     });
-  };
-
-  setupForm(contactForm);
-  setupForm(newsletterForm);
+  });
 })();

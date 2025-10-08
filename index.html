@@ -1,436 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LectureVault | Premium Lecture Downloads</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-content">
-      <a href="#hero" class="brand">LectureVault</a>
-      <nav class="main-nav" aria-label="Primary">
-        <a href="#lectures">Lectures</a>
-        <a href="#how-it-works">How it Works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class="btn btn-small btn-outline">Contact</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preply | Expert Online Tutors & Teachers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#hero" aria-label="Preply home">
+          <span aria-hidden="true">Preply</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#subjects">Find tutors</a>
+          <a href="#corporate">Corporate</a>
+          <a href="#become-tutor">Become a tutor</a>
+          <a href="#support">Support</a>
+        </nav>
+        <div class="header-actions">
+          <a class="login-link" href="#">Log in</a>
+          <a class="btn btn-pill" href="#cta">Sign up</a>
+        </div>
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile navigation" hidden>
+        <a href="#subjects">Find tutors</a>
+        <a href="#corporate">Corporate</a>
+        <a href="#become-tutor">Become a tutor</a>
+        <a href="#support">Support</a>
+        <a href="#" class="login-link">Log in</a>
+        <a href="#cta" class="btn btn-pill">Sign up</a>
       </nav>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-    <nav id="mobile-menu" class="mobile-nav" hidden aria-label="Mobile navigation">
-      <a href="#lectures">Lectures</a>
-      <a href="#how-it-works">How it Works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact" class="btn btn-small btn-outline">Contact</a>
-    </nav>
-  </header>
+    </header>
 
-  <main>
-    <section id="hero" class="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <span class="badge">Downloadable Lecture Library</span>
-          <h1>Deliver your expertise with instant downloads and secure payments.</h1>
-          <p>
-            LectureVault makes it effortless for your students to find, purchase, and download your
-            lectures. Accept PayPal or Stripe, deliver files immediately, and keep everyone in sync.
-          </p>
-          <div class="cta-group">
-            <a class="btn" href="#lectures">Browse Lectures</a>
-            <a class="btn btn-outline" href="#how-it-works">See How It Works</a>
+    <main>
+      <section id="hero" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="badge">1-on-1 language lessons</span>
+            <h1>Expert online tutors & teachers for private lessons</h1>
+            <p>
+              Learn with certified tutors from 185 countries. Take the first step toward fluency with
+              personalized lessons that fit your goals, schedule, and budget.
+            </p>
+            <ul class="hero-stats" role="list">
+              <li>
+                <strong>49,000+</strong>
+                <span>Experienced tutors</span>
+              </li>
+              <li>
+                <strong>120+</strong>
+                <span>Subjects taught</span>
+              </li>
+              <li>
+                <strong>4.9/5</strong>
+                <span>Average tutor rating</span>
+              </li>
+            </ul>
           </div>
-          <dl class="hero-stats">
-            <div>
-              <dt>1200+</dt>
-              <dd>Happy Learners</dd>
-            </div>
-            <div>
-              <dt>85</dt>
-              <dd>On-Demand Lectures</dd>
-            </div>
-            <div>
-              <dt>24/7</dt>
-              <dd>Instant Access</dd>
-            </div>
-          </dl>
+          <div class="hero-search" aria-labelledby="search-title">
+            <h2 id="search-title">Find your perfect tutor</h2>
+            <form class="search-form" novalidate>
+              <label for="subject">What do you want to learn?</label>
+              <div class="input-group">
+                <span class="icon" aria-hidden="true">🎓</span>
+                <select id="subject" name="subject">
+                  <option value="english" selected>English</option>
+                  <option value="spanish">Spanish</option>
+                  <option value="french">French</option>
+                  <option value="math">Math</option>
+                  <option value="programming">Programming</option>
+                </select>
+              </div>
+              <label for="where">Where are you from?</label>
+              <div class="input-group">
+                <span class="icon" aria-hidden="true">🌍</span>
+                <select id="where" name="where">
+                  <option value="anywhere" selected>Anywhere</option>
+                  <option value="usa">United States</option>
+                  <option value="uk">United Kingdom</option>
+                  <option value="brazil">Brazil</option>
+                  <option value="japan">Japan</option>
+                </select>
+              </div>
+              <label for="budget">What's your budget per lesson?</label>
+              <div class="range-row">
+                <input
+                  type="range"
+                  id="budget"
+                  name="budget"
+                  min="5"
+                  max="80"
+                  value="25"
+                  aria-describedby="budget-value"
+                />
+                <output id="budget-value" for="budget">$25</output>
+              </div>
+              <button type="submit" class="btn btn-pill">Search tutors</button>
+              <p class="form-hint">No subscription required. Pay as you go.</p>
+            </form>
+          </div>
         </div>
-        <div class="hero-card" role="presentation">
-          <div class="hero-card__header">
-            <h2>Featured Lecture</h2>
-            <p>AI Foundations Masterclass</p>
-          </div>
-          <ul class="hero-card__features">
-            <li>6.5 hours of HD content</li>
-            <li>Downloadable transcripts &amp; slides</li>
-            <li>Includes project workbook</li>
-          </ul>
-          <div class="hero-card__footer">
-            <span class="price">$49</span>
-            <a class="btn btn-small" href="#lectures">Get Access</a>
+        <div class="trust-bar" role="presentation">
+          <div class="container trust-grid">
+            <p>Trusted by learners from leading companies</p>
+            <ul role="list" class="logo-list">
+              <li>Zendesk</li>
+              <li>Canva</li>
+              <li>McKinsey</li>
+              <li>Eventbrite</li>
+              <li>EBay</li>
+            </ul>
           </div>
         </div>
-      </div>
-      <div class="hero-wave" aria-hidden="true"></div>
-    </section>
+      </section>
 
-    <section class="container section" id="lectures">
-      <header class="section-header">
-        <h2>Curated lectures, ready to download</h2>
-        <p>Each download includes video, audio, transcript, and bonus materials.</p>
-      </header>
-      <div class="filters" role="group" aria-label="Lecture filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="technology">Technology</button>
-        <button class="filter-btn" data-filter="business">Business</button>
-        <button class="filter-btn" data-filter="creative">Creative</button>
-      </div>
-      <div class="lecture-grid" role="list">
-        <article class="lecture-card" role="listitem" data-category="technology">
-          <div class="lecture-card__body">
-            <span class="tag">Technology</span>
-            <h3>AI Foundations Masterclass</h3>
-            <p>Understand core machine learning concepts, model evaluation, and ethical AI practices.</p>
-            <ul>
-              <li>6.5 hours video • 220 page transcript</li>
-              <li>Includes interactive workbook</li>
-            </ul>
-          </div>
-          <footer class="lecture-card__footer">
-            <span class="price">$49</span>
-            <div class="actions">
-              <button class="btn btn-small" data-modal-target="modal-ai">Purchase</button>
-              <a class="link" href="downloads/ai-foundations-masterclass.pdf" download>Preview</a>
-            </div>
-          </footer>
-        </article>
-
-        <article class="lecture-card" role="listitem" data-category="business">
-          <div class="lecture-card__body">
-            <span class="tag">Business</span>
-            <h3>Startup Finance Essentials</h3>
-            <p>Learn how to budget, forecast, and pitch your startup with confidence.</p>
-            <ul>
-              <li>4.25 hours video • 150 page workbook</li>
-              <li>Includes editable financial models</li>
-            </ul>
-          </div>
-          <footer class="lecture-card__footer">
-            <span class="price">$39</span>
-            <div class="actions">
-              <button class="btn btn-small" data-modal-target="modal-finance">Purchase</button>
-              <a class="link" href="downloads/startup-finance-essentials.pdf" download>Preview</a>
-            </div>
-          </footer>
-        </article>
-
-        <article class="lecture-card" role="listitem" data-category="creative">
-          <div class="lecture-card__body">
-            <span class="tag">Creative</span>
-            <h3>Storytelling for Video Creators</h3>
-            <p>Craft compelling narratives and shot lists for YouTube and streaming platforms.</p>
-            <ul>
-              <li>3 hours video • 95 page creative guide</li>
-              <li>Includes editable storyboarding templates</li>
-            </ul>
-          </div>
-          <footer class="lecture-card__footer">
-            <span class="price">$32</span>
-            <div class="actions">
-              <button class="btn btn-small" data-modal-target="modal-story">Purchase</button>
-              <a class="link" href="downloads/storytelling-for-video-creators.pdf" download>Preview</a>
-            </div>
-          </footer>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="how-it-works">
-      <div class="container split">
-        <div>
+      <section id="subjects" class="section subjects">
+        <div class="container">
           <header class="section-header">
-            <h2>Simple checkout, immediate delivery</h2>
-            <p>Students choose a lecture, pay securely, and receive instant download access.</p>
+            <h2>Popular online tutors</h2>
+            <p>Explore handpicked tutors ready to guide you through your language journey.</p>
           </header>
-          <ol class="steps">
+          <div class="subject-tabs" role="tablist" aria-label="Subjects">
+            <button class="tab-btn active" type="button" data-subject="english" role="tab" aria-selected="true">
+              English
+            </button>
+            <button class="tab-btn" type="button" data-subject="spanish" role="tab">Spanish</button>
+            <button class="tab-btn" type="button" data-subject="french" role="tab">French</button>
+            <button class="tab-btn" type="button" data-subject="german" role="tab">German</button>
+            <button class="tab-btn" type="button" data-subject="programming" role="tab">Programming</button>
+          </div>
+          <div class="tutor-grid" role="list">
+            <article class="tutor-card" data-subject-card="english" role="listitem">
+              <div class="tutor-card__top">
+                <span class="language">English</span>
+                <h3>Lauren M.</h3>
+                <p>TESOL certified with 8 years of experience helping professionals speak confidently.</p>
+              </div>
+              <ul class="tutor-meta" role="list">
+                <li>$28 per lesson</li>
+                <li>1,100+ lessons taught</li>
+                <li>Speaks English, Spanish</li>
+              </ul>
+              <button class="btn btn-pill">Book trial lesson</button>
+            </article>
+            <article class="tutor-card" data-subject-card="english" role="listitem">
+              <div class="tutor-card__top">
+                <span class="language">English</span>
+                <h3>Andrew P.</h3>
+                <p>Former IELTS examiner specializing in exam prep and academic writing.</p>
+              </div>
+              <ul class="tutor-meta" role="list">
+                <li>$32 per lesson</li>
+                <li>2,400+ lessons taught</li>
+                <li>Speaks English, German</li>
+              </ul>
+              <button class="btn btn-pill">Book trial lesson</button>
+            </article>
+            <article class="tutor-card" data-subject-card="spanish" role="listitem" hidden>
+              <div class="tutor-card__top">
+                <span class="language">Spanish</span>
+                <h3>María G.</h3>
+                <p>Native Spanish tutor for business professionals. Dynamic lessons tailored to your goals.</p>
+              </div>
+              <ul class="tutor-meta" role="list">
+                <li>$21 per lesson</li>
+                <li>1,800+ lessons taught</li>
+                <li>Speaks Spanish, English</li>
+              </ul>
+              <button class="btn btn-pill">Book trial lesson</button>
+            </article>
+            <article class="tutor-card" data-subject-card="spanish" role="listitem" hidden>
+              <div class="tutor-card__top">
+                <span class="language">Spanish</span>
+                <h3>Sergio H.</h3>
+                <p>DELE preparation specialist with interactive lessons focused on conversation.</p>
+              </div>
+              <ul class="tutor-meta" role="list">
+                <li>$18 per lesson</li>
+                <li>980+ lessons taught</li>
+                <li>Speaks Spanish, Italian</li>
+              </ul>
+              <button class="btn btn-pill">Book trial lesson</button>
+            </article>
+            <article class="tutor-card" data-subject-card="french" role="listitem" hidden>
+              <div class="tutor-card__top">
+                <span class="language">French</span>
+                <h3>Camille L.</h3>
+                <p>Alliance Française instructor helping learners master grammar and pronunciation.</p>
+              </div>
+              <ul class="tutor-meta" role="list">
+                <li>$30 per lesson</li>
+                <li>1,400+ lessons taught</li>
+                <li>Speaks French, English</li>
+              </ul>
+              <button class="btn btn-pill">Book trial lesson</button>
+            </article>
+            <article class="tutor-card" data-subject-card="german" role="listitem" hidden>
+              <div class="tutor-card__top">
+                <span class="language">German</span>
+                <h3>Felix R.</h3>
+                <p>Business German expert guiding teams toward confident professional communication.</p>
+              </div>
+              <ul class="tutor-meta" role="list">
+                <li>$35 per lesson</li>
+                <li>1,050+ lessons taught</li>
+                <li>Speaks German, English</li>
+              </ul>
+              <button class="btn btn-pill">Book trial lesson</button>
+            </article>
+            <article class="tutor-card" data-subject-card="programming" role="listitem" hidden>
+              <div class="tutor-card__top">
+                <span class="language">Programming</span>
+                <h3>Nikhil S.</h3>
+                <p>Software engineer teaching Python, JavaScript, and interview preparation.</p>
+              </div>
+              <ul class="tutor-meta" role="list">
+                <li>$40 per lesson</li>
+                <li>900+ lessons taught</li>
+                <li>Speaks English, Hindi</li>
+              </ul>
+              <button class="btn btn-pill">Book trial lesson</button>
+            </article>
+          </div>
+          <div class="cta-banner" id="cta">
+            <div>
+              <h3>Ready to start learning?</h3>
+              <p>Choose a tutor, pick a time, and begin your personalized lessons today.</p>
+            </div>
+            <a class="btn btn-pill" href="#hero">Get started</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="corporate">
+        <div class="container features-grid">
+          <div>
+            <header class="section-header align-left">
+              <h2>Why learners choose Preply</h2>
+              <p>Stay motivated with proven methodology, expert tutors, and flexible scheduling.</p>
+            </header>
+            <ul class="feature-list" role="list">
+              <li>
+                <h3>Personalized plans</h3>
+                <p>Match with tutors who adapt every lesson to your level and goals.</p>
+              </li>
+              <li>
+                <h3>Flexible scheduling</h3>
+                <p>Book lessons that fit your calendar and reschedule with ease.</p>
+              </li>
+              <li>
+                <h3>Progress tracking</h3>
+                <p>Keep tabs on your progress with lesson summaries and learning milestones.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Corporate language training</h3>
+            <p>
+              Upskill global teams with dedicated account management, onboarding support, and detailed reporting.
+            </p>
+            <ul class="feature-points" role="list">
+              <li>Tailored learning paths for teams</li>
+              <li>Centralized billing & analytics</li>
+              <li>Enterprise-grade support</li>
+            </ul>
+            <a class="btn btn-pill" href="#">Talk to our team</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" class="section steps">
+        <div class="container">
+          <header class="section-header">
+            <h2>How Preply works</h2>
+            <p>Getting started takes only a few minutes.</p>
+          </header>
+          <ol class="step-list">
             <li>
-              <h3>Choose a lecture</h3>
-              <p>Select from your catalog and open the purchase window to see the details.</p>
+              <span class="step-number">1</span>
+              <h3>Search for tutors</h3>
+              <p>Filter by subject, price, availability, and languages spoken.</p>
             </li>
             <li>
-              <h3>Secure payment</h3>
-              <p>Students pay with PayPal or Stripe. Replace the payment links with your own checkout URLs.</p>
+              <span class="step-number">2</span>
+              <h3>Book a trial lesson</h3>
+              <p>Connect with tutors, ask questions, and make sure it’s the right fit for you.</p>
             </li>
             <li>
-              <h3>Instant download</h3>
-              <p>After payment, the download button unlocks automatically for immediate access.</p>
+              <span class="step-number">3</span>
+              <h3>Schedule future lessons</h3>
+              <p>Stay consistent with weekly lessons and receive personalized homework.</p>
             </li>
           </ol>
         </div>
-        <div class="feature-card">
-          <h3>Included in every download</h3>
-          <ul>
-            <li>High-resolution MP4 video</li>
-            <li>MP3 audio-only version</li>
-            <li>Annotated PDF transcript</li>
-            <li>Bonus worksheets &amp; resources</li>
-            <li>Lifetime access to updates</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="pricing">
-      <div class="container">
-        <header class="section-header">
-          <h2>Bundles that grow with your audience</h2>
-          <p>Offer curated packages or sell lectures individually.</p>
-        </header>
-        <div class="pricing-grid">
-          <article class="pricing-card">
-            <h3>Single Lecture</h3>
-            <p class="price">$29 - $59</p>
-            <ul>
-              <li>Any individual lecture</li>
-              <li>Immediate download access</li>
-              <li>Payment by PayPal or Stripe</li>
-            </ul>
-            <a class="btn btn-small" href="#lectures">Choose a lecture</a>
-          </article>
-          <article class="pricing-card pricing-card--featured">
-            <div class="badge">Popular</div>
-            <h3>Complete Library</h3>
-            <p class="price">$249</p>
-            <ul>
-              <li>Includes every lecture &amp; update</li>
-              <li>One-click Stripe Checkout link</li>
-              <li>Priority support</li>
-            </ul>
-            <a class="btn btn-small" href="#contact">Request bundle link</a>
-          </article>
-          <article class="pricing-card">
-            <h3>Team Access</h3>
-            <p class="price">$499</p>
-            <ul>
-              <li>Up to 10 team members</li>
-              <li>Centralized billing</li>
-              <li>Automated lecture updates</li>
-            </ul>
-            <a class="btn btn-small btn-outline" href="#contact">Talk to sales</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="faq">
-      <div class="container">
-        <header class="section-header">
-          <h2>Frequently Asked Questions</h2>
-        </header>
-        <div class="faq">
-          <details>
-            <summary>How do I connect my PayPal and Stripe accounts?</summary>
-            <p>
-              Replace the placeholder PayPal form URL and Stripe checkout links in the purchase modal with your
-              own links. Both providers let you create payment buttons or hosted checkout links without code.
-            </p>
-          </details>
-          <details>
-            <summary>When are downloads released to students?</summary>
-            <p>
-              After payment confirmation, the download button within the modal becomes active. Students can access
-              their files immediately and will receive a confirmation email with the download link if you integrate
-              email automation.
-            </p>
-          </details>
-          <details>
-            <summary>Can I host the lecture files elsewhere?</summary>
-            <p>
-              Absolutely. Replace the download URLs with links to your storage provider such as Dropbox, Google
-              Drive, or a private CDN. This demo uses local files for illustration.
-            </p>
-          </details>
-          <details>
-            <summary>Is there analytics for downloads?</summary>
-            <p>
-              You can connect Google Analytics or your preferred tracking tool to monitor page views and checkout
-              conversions. Stripe and PayPal each provide detailed payment reports.
-            </p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container contact">
-        <div>
+      <section class="section section-alt testimonials">
+        <div class="container">
           <header class="section-header">
-            <h2>Need a custom lecture bundle?</h2>
-            <p>Fill in the form or email <a href="mailto:hello@lecturevault.com">hello@lecturevault.com</a> for a tailored offer.</p>
+            <h2>What our students say</h2>
+            <p>Thousands of learners rate Preply 4.9 out of 5 for quality and results.</p>
           </header>
-          <ul class="contact-benefits">
-            <li>48-hour response time</li>
-            <li>Bulk licensing discounts</li>
-            <li>White-label options</li>
+          <div class="testimonial-grid">
+            <figure class="testimonial-card">
+              <blockquote>
+                “Preply helped me become confident in business English before moving to London. My tutor keeps me
+                motivated with practical lessons.”
+              </blockquote>
+              <figcaption>
+                <strong>Lucía</strong>
+                <span>Marketing manager, Spain</span>
+              </figcaption>
+            </figure>
+            <figure class="testimonial-card">
+              <blockquote>
+                “I love the flexibility of scheduling and the quality of tutors. I can practice conversational
+                French anytime, anywhere.”
+              </blockquote>
+              <figcaption>
+                <strong>Christopher</strong>
+                <span>Product designer, USA</span>
+              </figcaption>
+            </figure>
+            <figure class="testimonial-card">
+              <blockquote>
+                “Our company uses Preply for corporate training. The reporting tools make it easy to track progress
+                across teams.”
+              </blockquote>
+              <figcaption>
+                <strong>Anaïs</strong>
+                <span>HR lead, France</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="become-tutor" class="section tutor-cta">
+        <div class="container tutor-cta__inner">
+          <div class="tutor-copy">
+            <h2>Teach on Preply</h2>
+            <p>
+              Share your expertise with learners around the world. Set your own rates, choose your schedule, and
+              grow your tutoring business online.
+            </p>
+            <ul role="list">
+              <li>Access to thousands of motivated students</li>
+              <li>Secure payments for every lesson</li>
+              <li>Dedicated tutor success team</li>
+            </ul>
+            <a class="btn btn-pill" href="#">Become a tutor</a>
+          </div>
+          <div class="app-preview" aria-hidden="true">
+            <div class="preview-card">
+              <span class="badge">Tutor dashboard</span>
+              <p>Track lessons, respond to messages, and manage your calendar in one place.</p>
+            </div>
+            <div class="preview-card">
+              <span class="badge">Lesson planner</span>
+              <p>Stay organized with shared materials, homework, and progress notes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="support" class="section faq">
+        <div class="container">
+          <header class="section-header">
+            <h2>Frequently asked questions</h2>
+            <p>Everything you need to know about starting your lessons.</p>
+          </header>
+          <div class="faq-grid">
+            <details open>
+              <summary>How quickly can I find a tutor?</summary>
+              <p>Most learners schedule a trial lesson within the first 24 hours of searching on Preply.</p>
+            </details>
+            <details>
+              <summary>Do I need a subscription?</summary>
+              <p>No. You purchase lesson hours in advance and can reschedule when you need to.</p>
+            </details>
+            <details>
+              <summary>What if I am not satisfied with a tutor?</summary>
+              <p>
+                Our tutor replacement guarantee means we will help you find another tutor at no additional cost.
+              </p>
+            </details>
+            <details>
+              <summary>Can companies use Preply?</summary>
+              <p>Yes. We provide dedicated support, reporting, and invoicing for corporate clients.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="#hero">Preply</a>
+          <p>Personalized learning journeys with trusted tutors from around the world.</p>
+        </div>
+        <div>
+          <h3>For learners</h3>
+          <ul>
+            <li><a href="#subjects">Find an English tutor</a></li>
+            <li><a href="#subjects">Find a Spanish tutor</a></li>
+            <li><a href="#subjects">Find a French tutor</a></li>
+            <li><a href="#how">How it works</a></li>
           </ul>
         </div>
-        <form class="contact-form" novalidate>
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" required />
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" required />
-          </div>
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell us what you need"></textarea>
-          </div>
-          <button type="submit" class="btn btn-small">Send message</button>
-          <p class="form-feedback" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a href="#hero" class="brand">LectureVault</a>
-        <p class="footer-text">Delivering high-quality lectures with secure, instant downloads.</p>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#lectures">Lectures</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Stay Updated</h3>
-        <form class="newsletter" novalidate>
-          <label class="sr-only" for="newsletter-email">Email</label>
-          <input id="newsletter-email" type="email" name="email" placeholder="Email address" required />
-          <button type="submit" class="btn btn-small">Join</button>
-          <p class="form-feedback" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </div>
-    <p class="legal">© <span id="year"></span> LectureVault. All rights reserved.</p>
-  </footer>
-
-  <div class="modal" id="modal-ai" role="dialog" aria-modal="true" aria-labelledby="modal-ai-title" hidden>
-    <div class="modal__backdrop" data-close></div>
-    <div class="modal__dialog">
-      <button class="modal__close" data-close aria-label="Close">
-        <span>&times;</span>
-      </button>
-      <div class="modal__header">
-        <h2 id="modal-ai-title">AI Foundations Masterclass</h2>
-        <p>Secure your copy with PayPal or Stripe.</p>
-      </div>
-      <div class="modal__content">
-        <ul class="modal__details">
-          <li>6.5 hours on-demand video</li>
-          <li>Transcripts, slides, and workbook</li>
-          <li>Instant download unlock after payment</li>
-        </ul>
-        <div class="modal__checkout">
-          <form class="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="cmd" value="_s-xclick" />
-            <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID" />
-            <button type="submit" class="btn btn-paypal">Pay with PayPal</button>
-          </form>
-          <a class="btn btn-stripe" href="https://buy.stripe.com/test_000000000000" target="_blank" rel="noopener">Pay with Stripe</a>
+        <div>
+          <h3>For tutors</h3>
+          <ul>
+            <li><a href="#become-tutor">Teach online</a></li>
+            <li><a href="#become-tutor">Tutor resources</a></li>
+            <li><a href="#support">Help center</a></li>
+          </ul>
         </div>
-        <button class="btn btn-small btn-success" data-unlock="ai">I have completed payment</button>
-        <a class="btn btn-small btn-outline" data-download="ai" href="downloads/ai-foundations-masterclass.pdf" download hidden>
-          Download lecture
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="modal-finance" role="dialog" aria-modal="true" aria-labelledby="modal-finance-title" hidden>
-    <div class="modal__backdrop" data-close></div>
-    <div class="modal__dialog">
-      <button class="modal__close" data-close aria-label="Close">
-        <span>&times;</span>
-      </button>
-      <div class="modal__header">
-        <h2 id="modal-finance-title">Startup Finance Essentials</h2>
-        <p>Purchase securely and download immediately.</p>
-      </div>
-      <div class="modal__content">
-        <ul class="modal__details">
-          <li>Budgeting, forecasting, and investor pitch prep</li>
-          <li>Editable financial templates</li>
-          <li>Full transcript and slides</li>
-        </ul>
-        <div class="modal__checkout">
-          <form class="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="cmd" value="_s-xclick" />
-            <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID" />
-            <button type="submit" class="btn btn-paypal">Pay with PayPal</button>
+        <div>
+          <h3>Stay in the loop</h3>
+          <form class="newsletter" novalidate>
+            <label for="newsletter-email" class="sr-only">Email</label>
+            <input id="newsletter-email" type="email" name="email" placeholder="Email address" required />
+            <button type="submit" class="btn btn-pill">Subscribe</button>
+            <p class="form-feedback" role="status" aria-live="polite"></p>
           </form>
-          <a class="btn btn-stripe" href="https://buy.stripe.com/test_111111111111" target="_blank" rel="noopener">Pay with Stripe</a>
         </div>
-        <button class="btn btn-small btn-success" data-unlock="finance">I have completed payment</button>
-        <a class="btn btn-small btn-outline" data-download="finance" href="downloads/startup-finance-essentials.pdf" download hidden>
-          Download lecture
-        </a>
       </div>
-    </div>
-  </div>
+      <p class="legal">© <span id="year"></span> Preply. All rights reserved.</p>
+    </footer>
 
-  <div class="modal" id="modal-story" role="dialog" aria-modal="true" aria-labelledby="modal-story-title" hidden>
-    <div class="modal__backdrop" data-close></div>
-    <div class="modal__dialog">
-      <button class="modal__close" data-close aria-label="Close">
-        <span>&times;</span>
-      </button>
-      <div class="modal__header">
-        <h2 id="modal-story-title">Storytelling for Video Creators</h2>
-        <p>Secure checkout with PayPal or Stripe.</p>
-      </div>
-      <div class="modal__content">
-        <ul class="modal__details">
-          <li>Story structure frameworks</li>
-          <li>Editable script templates</li>
-          <li>Access to bonus resources</li>
-        </ul>
-        <div class="modal__checkout">
-          <form class="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="cmd" value="_s-xclick" />
-            <input type="hidden" name="hosted_button_id" value="REPLACE_WITH_YOUR_BUTTON_ID" />
-            <button type="submit" class="btn btn-paypal">Pay with PayPal</button>
-          </form>
-          <a class="btn btn-stripe" href="https://buy.stripe.com/test_222222222222" target="_blank" rel="noopener">Pay with Stripe</a>
-        </div>
-        <button class="btn btn-small btn-success" data-unlock="story">I have completed payment</button>
-        <a class="btn btn-small btn-outline" data-download="story" href="downloads/storytelling-for-video-creators.pdf" download hidden>
-          Download lecture
-        </a>
-      </div>
-    </div>
-  </div>
+    <template id="toast-template">
+      <div class="toast" role="status" aria-live="polite"></div>
+    </template>
 
-  <template id="toast-template">
-    <div class="toast" role="status" aria-live="assertive"></div>
-  </template>
-
-  <script src="scripts.js" defer></script>
-</body>
+    <script src="scripts.js" defer></script>
+  </body>
 </html>
